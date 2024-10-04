@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Page</title>
+    <script>
+        function checkLocalTime() {
+            const now = new Date();
+            const hour = now.getHours();
+            const minutes = now.getMinutes();
+            const passwordElement = document.getElementById('password');
+
+            // Verificar si la hora está entre 9:30 p.m. y 10:30 p.m.
+            if ((hour === 21 && minutes >= 30) || (hour === 22 && minutes < 30)) {
+                passwordElement.innerHTML = "2qk53t5yo5x"; // Mostrar la contraseña
+            } else {
+                passwordElement.innerHTML = "Access Denied: You can only view the content between 9:30 p.m. and 10:30 p.m.";
+            }
+        }
+    </script>
+</head>
+<body onload="checkLocalTime()">
+    <h1>Access Control Page</h1>
+    <p id="password"></p>
+</body>
+</html>
